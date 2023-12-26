@@ -7,21 +7,13 @@
   <title>Rotating Circle</title>
 </head>
 <body>
-  <div class="outer-circle">
+  <h1 id="hoverText">Hover to Rotate</h1>
+  <div class="outer-circle" onmouseover="startRotation()" onmouseout="stopRotation()">
     <div class="inner-circle"></div>
   </div>
-  
-  <div class="button-container">
-    <button onclick="startRotation()">Start Rotation</button>
-    <button onclick="stopRotation()">Stop Rotation</button>
-    <button onclick="reverseRotation()">Reverse Rotation</button>
-    <button onclick="showSurprise()">Surprise</button>
-    <button onclick="increaseSpeed()">Decrease Speed</button>
-    <button onclick="decreaseSpeed()">Increase Speed</button>
-  </div>
-
-  <canvas id="fireworksCanvas"></canvas>
-
+  <p id="rotationMessage"></p>
+  <label for="circleSize">Change Circle Size:</label>
+  <input type="range" id="circleSize" min="100" max="500" step="10" value="300" oninput="changeCircleSize(this.value)">
   <script src="script.js"></script>
 </body>
 </html>
