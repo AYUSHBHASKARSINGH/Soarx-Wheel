@@ -1,0 +1,71 @@
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #000000; /* Black background */
+}
+
+.outer-circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #ff0000 0% 25%,   /* Red */
+    #00ff00 25% 50%,  /* Green */
+    #0000ff 50% 75%,  /* Blue */
+    #ffff00 75% 100%  /* Yellow */
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: rotateAnimation 5s linear infinite; /* Default rotation speed */
+}
+
+.inner-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #ffffff; /* White */
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+button {
+  margin: 0 10px;
+  padding: 10px;
+  cursor: pointer;
+  background: linear-gradient(to right, #4caf50, #2196f3); /* Gradient background */
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+}
